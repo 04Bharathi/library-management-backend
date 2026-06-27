@@ -87,7 +87,6 @@ library-management
 ├── routes
 │   ├── authRoutes.js
 │   ├── bookRoutes.js
-│   ├── borrowRoutes.js
 │   └── memberRoutes.js
 │
 ├── database
