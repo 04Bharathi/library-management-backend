@@ -1,0 +1,63 @@
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "Bharathi",
+    "email": "bharathig@gmail.com",
+    "password": "123456"
+}
+
+### login ###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email":"bharathig@gmail.com",
+    "password":"123456"
+}
+
+###test###
+
+GET http://localhost:5000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6Im1lbWJlciIsImlhdCI6MTc4MjU5MjY3MiwiZXhwIjoxNzgyNjc5MDcyfQ.XXa-_q0_tMFWZjH7jlP1E2RtvXg5bGTo-bpKcEwj__g
+
+### add book ###
+POST http://localhost:5000/api/books
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6Im1lbWJlciIsImlhdCI6MTc4MjU5MjY3MiwiZXhwIjoxNzgyNjc5MDcyfQ.XXa-_q0_tMFWZjH7jlP1E2RtvXg5bGTo-bpKcEwj__g
+Content-Type: application/json
+
+{
+    "title":"Node.js Guide",
+    "author":"John Doe",
+    "isbn":"9781234567890",
+    "category":"Programming",
+    "quantity":10
+}
+
+### GET BOOKS ###
+
+PUT http://localhost:5000/api/books/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6Im1lbWJlciIsImlhdCI6MTc4MjU5MjY3MiwiZXhwIjoxNzgyNjc5MDcyfQ.XXa-_q0_tMFWZjH7jlP1E2RtvXg5bGTo-bpKcEwj__g
+Content-Type: application/json
+
+{
+    "title":"Advanced Node.js",
+    "author":"John Doe",
+    "isbn":"9781234567890",
+    "category":"Programming",
+    "quantity":15,
+    "availableQuantity":15
+}
+
+###BORROW BOOKS###
+POST http://localhost:5000/api/books/1/borrow
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6Im1lbWJlciIsImlhdCI6MTc4MjU5MjY3MiwiZXhwIjoxNzgyNjc5MDcyfQ.XXa-_q0_tMFWZjH7jlP1E2RtvXg5bGTo-bpKcEwj__g
+
+###RETURN BOOKS###
+POST http://localhost:5000/api/books/1/return
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6Im1lbWJlciIsImlhdCI6MTc4MjU5MjY3MiwiZXhwIjoxNzgyNjc5MDcyfQ.XXa-_q0_tMFWZjH7jlP1E2RtvXg5bGTo-bpKcEwj__g
+
+
+###GET HISTORY###
+GET http://localhost:5000/api/members/me/books
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6Im1lbWJlciIsImlhdCI6MTc4MjU5MjY3MiwiZXhwIjoxNzgyNjc5MDcyfQ.XXa-_q0_tMFWZjH7jlP1E2RtvXg5bGTo-bpKcEwj__g
